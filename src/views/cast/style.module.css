@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.card {
+  padding: 5px;
+  border: solid;
+  border-radius: 5px;
+  background-color: rgba(186, 186, 173, 0.552);
+  text-align: center;
+}
+.img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}

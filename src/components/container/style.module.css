@@ -1,0 +1,9 @@
+.container {
+  z-index: 10;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: rgb(243, 241, 239);
+}

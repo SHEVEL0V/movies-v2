@@ -1,0 +1,18 @@
+.title {
+  color: rgba(0, 136, 255, 0.917);
+}
+
+.img {
+  height: auto;
+  width: 350px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+.naw {
+  text-decoration: none;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.container {
+  display: flex;
+}

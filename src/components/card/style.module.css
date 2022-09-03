@@ -1,0 +1,26 @@
+.link {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(154, 211, 242, 0.197);
+  border-radius: 10px;
+  border: solid rgba(0, 0, 255, 0.287);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.img {
+  display: block;
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+
+  border-radius: 5px;
+}

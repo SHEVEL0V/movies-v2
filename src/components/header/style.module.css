@@ -1,0 +1,15 @@
+.nav {
+  padding: 10px;
+  display: flex;
+  box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: rgba(148, 158, 179, 0.67);
+  color: rgba(30, 45, 123, 0.44);
+}
+
+.buuton {
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 20px;
+}

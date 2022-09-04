@@ -1,5 +1,5 @@
 /** @format */
-import { useState } from "react";
+
 import { useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -11,13 +11,12 @@ import s from "./style.module.css";
 
 export default function SerchFilm() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [value, setValue] = useState("");
   const query = searchParams.get("search");
 
-  const { data, isLoading } = useQuery(
+  const { data, isLoading, refetch } = useQuery(
     ["fechQery", query],
     () => fetchFilmQery(query),
-    { enabled: !!query }
+    { enabled: false }
   );
 
   const films = data?.results || [];
@@ -26,17 +25,15 @@ export default function SerchFilm() {
     <div>
       <form className={s.form}>
         <TextField
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setSearchParams({ search: e.target.value })}
           className={s.input}
           label="Movies"
           variant="outlined"
           size="small"
+          value={query}
         />
 
-        <Button
-          variant="contained"
-          onClick={() => setSearchParams({ search: value })}
-        >
+        <Button variant="contained" onClick={() => refetch()}>
           search
         </Button>
       </form>

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   return (
     <nav className={s.nav}>
       <NavLink
-        className={s.buuton}
+        className={s.button}
         style={({ isActive }) =>
           isActive ? { backgroundColor: "rgba(30, 45, 123, 0.244)" } : {}
         }
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
       </NavLink>
 
       <NavLink
-        className={s.buuton}
+        className={s.button}
         style={({ isActive }) =>
           isActive ? { backgroundColor: "rgba(30, 45, 123, 0.244)" } : {}
         }

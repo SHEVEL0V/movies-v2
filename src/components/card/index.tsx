@@ -1,9 +1,10 @@
 /** @format */
-
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/images.png";
 import Movies from "../../types/movies";
 import s from "./style.module.css";
+
 
 type Props = {
   film: Movies;
@@ -19,7 +20,7 @@ const Card: React.FC<Props> = ({ film }) => {
       <img
         className={s.img}
         src={film.backdrop_path ? imgPath : logo}
-        alt="baner"
+        alt="banner"
       ></img>
       <div className={s.container}>
         <b>{film.title}</b>

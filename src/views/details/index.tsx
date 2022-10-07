@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Section from "../../components/section";
 import Loading from "../../components/loading";
 import NawDetals from "../../components/navDetals";
-import CardDetals from "../../components/cardDetals";
+import CardDetails from "../../components/cardDetals";
 
 const Cast = lazy(() => import("../cast"));
 const Reviews = lazy(() => import("../reviews"));
@@ -13,7 +13,7 @@ const Reviews = lazy(() => import("../reviews"));
 const MovieDetailsPage: React.FC = () => {
   return (
     <>
-      <CardDetals />
+      <CardDetails />
       <NawDetals />
       <Section>
         <Suspense fallback={<Loading />}>

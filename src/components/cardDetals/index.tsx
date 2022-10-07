@@ -9,12 +9,12 @@ import Button from "@mui/material/Button";
 import logo from "../../img/images.png";
 import s from "./style.module.css";
 
-const CardDetals: React.FC = () => {
+const CardDetails: React.FC = () => {
   const { movieId } = useParams();
   const imgPath = "https://image.tmdb.org/t/p/w500/";
 
   const navigate = useNavigate();
-  const { data, isLoading } = useQuery(["fechById", movieId], () =>
+  const { data, isLoading } = useQuery(["fetchById", movieId], () =>
     fetchFilmById(movieId)
   );
 
@@ -39,7 +39,7 @@ const CardDetals: React.FC = () => {
               <img
                 className={s.img}
                 src={poster_path ? imgPath + poster_path : logo}
-                alt="baner "
+                alt="banner "
               ></img>
               <div>
                 <h2>{title}</h2>
@@ -60,4 +60,4 @@ const CardDetals: React.FC = () => {
   );
 };
 
-export default CardDetals;
+export default CardDetails;

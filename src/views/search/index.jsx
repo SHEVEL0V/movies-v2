@@ -1,25 +1,25 @@
 /** @format */
 
-import { useSearchParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import BeatLoader from "react-spinners/BeatLoader";
-import { fetchFilmQery } from "../../services/fetch";
-import Button from "@mui/material/Button";
-import Card from "../../components/card";
-import TextField from "@mui/material/TextField";
-import s from "./style.module.css";
+import { useSearchParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import BeatLoader from 'react-spinners/BeatLoader'
+import { fetchFilmQuery } from '../../services/fetch'
+import Button from '@mui/material/Button'
+import Card from '../../components/card'
+import TextField from '@mui/material/TextField'
+import s from './style.module.css'
 
 export default function SerchFilm() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("search");
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('search')
 
   const { data, isLoading, refetch } = useQuery(
-    ["fechQery", query],
-    () => fetchFilmQery(query),
+    ['fechQuery', query],
+    () => fetchFilmQuery(query),
     { enabled: false }
-  );
+  )
 
-  const films = data?.results || [];
+  const films = data?.results || []
 
   return (
     <div>
@@ -44,5 +44,5 @@ export default function SerchFilm() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

@@ -9,12 +9,12 @@ import Card from '../../components/card'
 import TextField from '@mui/material/TextField'
 import s from './style.module.css'
 
-export default function SerchFilm() {
+export default function SearchFilm() {
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get('search')
 
   const { data, isLoading, refetch } = useQuery(
-    ['fechQuery', query],
+    ['fetchQuery', query],
     () => fetchFilmQuery(query),
     { enabled: false }
   )

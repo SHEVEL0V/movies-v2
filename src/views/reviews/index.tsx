@@ -1,18 +1,18 @@
 /** @format */
 
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
-import { fetchFilmReviews } from "../../services/fetch";
-import s from "./style.module.css";
+import { useQuery } from '@tanstack/react-query'
+import { useParams } from 'react-router-dom'
+import { fetchFilmReviews } from '../../services/fetch'
+import s from './style.module.css'
 
 const Reviews: React.FC = () => {
-  const { movieId } = useParams();
-  const { data } = useQuery(["fechTrend", movieId], () =>
+  const { movieId } = useParams()
+  const { data } = useQuery(['fetchTrend', movieId], () =>
     fetchFilmReviews(movieId)
-  );
+  )
 
   const reviews: { id: string; author: string; content: string }[] =
-    data?.results || [];
+    data?.results || []
 
   return (
     <ul className={s.container}>
@@ -24,10 +24,10 @@ const Reviews: React.FC = () => {
           </li>
         ))
       ) : (
-        <h3 className={s.title}>We don't haveany reviews for this movie.</h3>
+        <h3 className={s.title}>We don't have any reviews for this movie.</h3>
       )}
     </ul>
-  );
-};
+  )
+}
 
-export default Reviews;
+export default Reviews

@@ -1,16 +1,16 @@
 /** @format */
-import { useQuery } from "@tanstack/react-query";
-import { fetchFilmTrendWeek } from "../../services/fetch";
-import Movies from "../../types/movies";
-import Card from "../../components/card";
-import Loading from "../../components/loading";
+import { useQuery } from '@tanstack/react-query'
+import { fetchFilmTrendWeek } from '../../services/fetch'
+import Movies from '../../types/movies'
+import Card from '../../components/card'
+import Loading from '../../components/loading'
 
 const HomePage: React.FC = () => {
-  const { data, isLoading } = useQuery(["fechTrend"], () =>
+  const { data, isLoading } = useQuery(['fetchTrend'], () =>
     fetchFilmTrendWeek()
-  );
+  )
 
-  const movies = data?.results || [];
+  const movies = data?.results || []
 
   return (
     <ul>
@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
         <Card film={el} key={el.id} />
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
